@@ -4,7 +4,9 @@
   "description": "Express app with a welcome page and a status endpoint",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "node --check index.js",
+    "build": "node --check index.js"
   },
   "license": "ISC",
   "dependencies": {
