@@ -1,0 +1,13 @@
+{
+  "name": "test-app-backend",
+  "version": "1.0.0",
+  "description": "Express app with a welcome page and a status endpoint",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
