@@ -4,7 +4,8 @@ services:
     image: pradeepdumka/test-app-backend:latest
     container_name: test-app-backend
     restart: unless-stopped
-
+    ports:
+      - "80:4000"
     environment:
       HOST: 0.0.0.0
       PORT: 4000
