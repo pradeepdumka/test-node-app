@@ -2,6 +2,18 @@ const express = require("express");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+const allowedHost =
+  'ec2-16-170-148-240.eu-north-1.compute.amazonaws.com';
+
+app.use((req, res, next) => {
+  if (req.hostname !== allowedHost) {
+    return res.status(403).json({
+      message: 'Access denied'
+    });
+  }
+
+  next();
+});
 
 app.get("/", (req, res) => {
   res.type("html").send(`<!DOCTYPE html>
