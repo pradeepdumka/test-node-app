@@ -30,8 +30,8 @@ app.get("/", (req, res) => {
 </head>
 <body>
   <main>
-    <h1>Welcome</h1>
-    <p>The API is running.</p>
+    <h1>Welcome to Test App Backend</h1>
+    <p>The API is running. using ci cd pipeline</p>
     <p><a href="/api">GET /api</a></p>
   </main>
 </body>
@@ -42,7 +42,23 @@ app.get("/api", (req, res) => {
   res.json({
     msg: "success",
     status: "OK",
-    data: {},
+    data: {
+      message: "success",
+      status: "OK",
+      user: {
+        name : "Pradeep Dumka",
+        email : "pradeepdumka@gmail.com",
+        phone : "9876543210",
+        address : "123, Main St, Anytown, USA",
+        city : "Anytown",
+        state : "CA",
+        zip : "12345",
+        country : "USA",
+        isActive : true,
+        createdAt : new Date(),
+        updatedAt : new Date(),
+      },
+    },
   });
 });
 
