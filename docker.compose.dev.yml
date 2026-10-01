@@ -1,0 +1,17 @@
+services:
+
+  backend:
+    image: pradeepdumka/test-app-backend:latest
+    container_name: test-app-backend
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      HOST: 0.0.0.0
+      PORT: 4000
+      MONGODB_URI: mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@mongo:27017/user_dashboard?authSource=admin
+      CLIENT_URL: ${CLIENT_URL}
+
+volumes:
+  mongo_data:
