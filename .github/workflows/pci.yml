@@ -79,7 +79,8 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           command_timeout: 30m
           script_stop: true
-          script: 
+          script: |
+            set -euo pipefail
             sudo docker compose --env-file ~/.env -f ~/docker.compose.dev.yml pull
             sudo docker compose --env-file ~/.env -f ~/docker.compose.dev.yml up -d --remove-orphans --wait --wait-timeout 300
             sudo docker compose --env-file ~/.env -f ~/docker.compose.dev.yml ps
