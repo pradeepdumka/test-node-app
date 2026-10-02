@@ -1,8 +1,8 @@
 services:
 
   backend:
-    image: pradeepdumka/test-app-backend:latest
-    container_name: test-app-backend
+    image: pradeepdumka/backend:latest
+    container_name: backend
     restart: unless-stopped
     ports:
       - "127.0.0.1:4000:4000"
